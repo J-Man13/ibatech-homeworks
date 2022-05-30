@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  app:
+    image: 'ibatech/task-1:latest'
+    ports:
+      - "8080:8080"
