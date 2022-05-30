@@ -1,0 +1,53 @@
+$ mvn clean
+$ mvn package
+$ docker build -t ibatech/task-1 .
+$ docker images -a
+	REPOSITORY       TAG       IMAGE ID       CREATED         SIZE
+	ibatech/task-1   latest    9eebc8aa073d   2 minutes ago   342MB
+$ docker run -p 8080:8080 ibatech/task-1
+	.   ____          _            __ _ _
+	/\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+	( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+	\\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+	'  |____| .__|_| |_|_| |_\__, | / / / /
+	=========|_|==============|___/=/_/_/_/
+	:: Spring Boot ::                (v2.4.0)
+
+	2022-05-30 14:06:53.793  INFO 1 --- [           main] s.i.d.a.d.c.SpringBootDockerIbaTechTask1 : Starting SpringBootDockerIbaTechTask1 v1.0.0 using Java 11.0.15 on 08342f435536 with PID 1 (/app.jar started by root in /)
+	2022-05-30 14:06:53.797  INFO 1 --- [           main] s.i.d.a.d.c.SpringBootDockerIbaTechTask1 : No active profile set, falling back to default profiles: default
+	2022-05-30 14:06:54.635  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+	2022-05-30 14:06:54.647  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+	2022-05-30 14:06:54.647  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+	2022-05-30 14:06:54.697  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+	2022-05-30 14:06:54.698  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 839 ms
+	2022-05-30 14:06:54.854  INFO 1 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+	2022-05-30 14:06:55.015  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) wit
+$ docker ps
+	CONTAINER ID   IMAGE            COMMAND                CREATED              STATUS              PORTS                    NAMES
+	08342f435536   ibatech/task-1   "java -jar /app.jar"   About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp   sharp_curie	
+$ docker stop 08342f435536
+	2022-05-30 14:08:08.090  INFO 1 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+	08342f435536
+$ docker-compose up
+	Starting task-1-simple-spring-boot-service-in-docker-and-docker-compose_app_1 ...
+	Starting task-1-simple-spring-boot-service-in-docker-and-docker-compose_app_1 ... done
+	Attaching to task-1-simple-spring-boot-service-in-docker-and-docker-compose_app_1
+	app_1  |
+	app_1  |   .   ____          _            __ _ _
+	app_1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+	app_1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+	app_1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+	app_1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+	app_1  |  =========|_|==============|___/=/_/_/_/
+	app_1  |  :: Spring Boot ::                (v2.4.0)
+	app_1  |
+	app_1  | 2022-05-30 14:53:33.692  INFO 1 --- [           main] s.i.d.a.d.c.SpringBootDockerIbaTechTask1 : Starting SpringBPID 1 (/app.jar started by root in /)
+	app_1  | 2022-05-30 14:53:33.695  INFO 1 --- [           main] s.i.d.a.d.c.SpringBootDockerIbaTechTask1 : No active profil
+	app_1  | 2022-05-30 14:53:34.539  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initializ
+	app_1  | 2022-05-30 14:53:34.550  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service
+	app_1  | 2022-05-30 14:53:34.550  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet
+	app_1  | 2022-05-30 14:53:34.599  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spr
+	app_1  | 2022-05-30 14:53:34.599  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicat
+	app_1  | 2022-05-30 14:53:34.769  INFO 1 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing Exe
+	app_1  | 2022-05-30 14:53:34.939  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started o	
+	app_1  | 2022-05-30 14:53:34.948  INFO 1 --- [           main] s.i.d.a.d.c.SpringBootDockerIbaTechTask1 : Started SpringBo	
