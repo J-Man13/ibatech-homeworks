@@ -1,0 +1,30 @@
+https://github.com/alexr007/se2-java/blob/master/src/main/java/t02/task.md
+
+### intro
+
+here is the small application.
+- it just exposes one endpoint `/user/:id`
+- it expects integer user id
+- it returns te user
+
+### task 1
+
+- describe all steps needed for safe migration response type `User(id, name)` to `User(Int id, String firstName, String lastName)`
+ 	Add 'String lastName' to the constructor argument of type 'User'
+	Fix, make modifications to the parts of code where `User(id, name)` conctructor is called and make it use `User(Int id, String firstName, String lastName)` constructor
+- suppose the current version of this artifact is `1.5`
+- how would you bring versioning to the API?
+- what is the next version if artifact should be?
+	Next version would be '2.0'. Reason for that is that signature of one of the classes has changed which leads to complitation errors which need to be fixed
+### task 2
+
+- describe all steps needed for safe migration response type `User(id, name)` to `User(Int id, String name, List<String> skills)`
+	Add 'List<String> skills' to the constructor argument of type 'User'
+	Fix, make modifications to the parts of code where `User(id, name)` conctructor is called and make it use `User(Int id, String firstName, List<String> skills)` constructor
+- suppose the current version of this artifact is `1.5`
+- how would you bring versioning to the API?
+- what is the next version if artifact should be?
+	Next version would be '2.0'. Reason for that is that signature of one of the classes has changed which leads to complitation errors which need to be fixed
+### definition of done
+- all steps should be described in plain english
+- all meaningful things like versioning, urls, User data types need to be specified
